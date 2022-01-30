@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>About Us</title>
+<link href="css/styles.css" type="text/css" rel="stylesheet"> 
+</head>
+<body>
+<div id="wrapper">
+<header>
+    	<div style="float:right; padding: 10px 10px 0;" sec:authorize="isAuthenticated()"><span sec:authentication="name" style="color: #684348;font-family: Heiti TC;">Username</span></div>
+    	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 90px;" th:action="@{/logout}" method="post">
+    		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Logout"/>
+    	</form>
+    	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 120px;" th:action="@{/dashboard}" method="post">
+    		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Dashboard"/>
+    	</form>
+    	<!-- <ul style="list-style-type: none;">
+    	<li><h4 style="float:right; padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/register}">Register</a></h4></li>
+    	<li><h4 style="float:right;padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/login}">Login</a></h4></li></ul> -->
+        <a href="index">
+            <img id="logo" src="images/1a.png" alt="Hedwing Book Club Logo" style="float: left;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    width: 20%;"></a>
+        <img id="logotext" src="images/2b.png" alt="Hedwing Book Club Logo Text" style="padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    width: 75%;">
+    </header>
+        <nav>
+        <ul>
+            <li><a href="index">HOME</a></li>
+            <li><a href="aboutus">ABOUT US</a></li>
+            <li class="dropdown"><a href="book" class="dropbth">BOOK BOX</a>
+               <div class="dropdown-content">
+                    <a href="womenbox">FOR WOMEN ON ENGLISH</a>
+                    <a href="womenbox">FOR WOMEN ON RUSSIAN</a>
+                    <a href="menbox">FOR MEN ON ENGLISH</a>
+                    <a href="menbox">FOR MEN ON RUSSIAN</a>
+                    <a href="kidsbox">FOR KIDS ON RUSSIAN</a>
+                </div> 
+            </li>
+            <li><a href="bookclub">BOOK CLUB</a></li>
+            <li><a href="gallery">GALLERY</a></li>
+            <li><a href="contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div id="banner">
+        <img src="images/readbook.png" alt="Photo of reading book">
+    </div>
+    <div id="wrapper2">
+        <main id="aboutus">
+            <h1 style="color: #FFD0D0; padding-left: 5px;">Welcome to our club, </h1>
+            <h1 style="color: #FFD0D0; padding-left: 5px;"> Dear Friend!</h1>
+            <h2 style = "padding-left: 15px;">Let's introduce ourselves!</h2>
+            <img src="images/line4.png" alt="Photo of line" style="padding-left: 5px;">
+            <div class="container2">
+                <div class="third">
+                    <h3 style="color: #684348; font-family: Heiti TC">☆ What is Hedwig Book Club?</h3>
+                    <p class="column" style="font-size: 1.2em;">This is a monthly book box that is unique! The coolest team is working on its composing, so you can take my word for it, a product assembled with a soul will come to you!</p>
+                    <h3 style="color: #684348; font-family: Heiti TC">☆ What is waiting for me in the box in addition to the book?</h3>
+                    <p class="column" style="font-size: 1.2em;">In addition to the book, 3-4 plot gifts await you. These gifts are somehow interconnected with what is happening, or the heroes use them directly.</p>
+                </div>
+                <div class="third" style="height:70%;">
+                    <h3 style="color: #684348; font-family: Heiti TC">☆ How do I know when to open a gift? </h3>
+                    <p class="column" style="font-size: 1.2em;">On each gift you will see a sticker with the page inscription. As you read through the book, you will find streakers with the words "open the gift". This means that the time has come for him. Find a gift with a matching page number and enjoy.
+                    </p>
+                    <p class="column" style="font-size: 1.2em;">From time to time, an invitation to a Book Club event will be waiting for you in the box. Let's get acquainted and communicate!</p>
+                </div>
+                <div class="third" style="height:400px;">
+                    <h3 style="color: #684348; font-family: Heiti TC">☆ Is it possible to be aware of the name of the book ahead?</h3>
+                    <p class="column" style="font-size: 1.2em;">The book, like all its components, is a secret until it reaches you. In order to make sure that you have not read it yet, we suggest that you familiarize yourself with the description of the plot in the announcement. This will give a tip and dispel suspicions.</p>
+                </div>
+            </div>
+            <img src="images/line4.png" alt="Photo of line" style="padding-left: 5px;">
+        </main>
+        <aside style="width:30%; margin-left: 0px;">
+            <p style="color: #684348; font-family: Heiti TC; margin-left: 0px; margin-right:0px;">Want to place an order now? </p> <p style="margin-left: 0px;">Just click "Book now"!</p>
+            <a title="Click to book now" href="book"><img class="left" src="images/book_now.png" alt="Book now Photo" style="width: 180px; margin-left: 40px; margin-right:0px;"></a>
+        </aside>
+        <aside id="leftaside">
+            <img src="images/author.jpg" alt="Photo of author" style="margin-right:0px;">
+            <img id="pen" src="images/oldpen.png" alt="Photo of pen" style="width: 120px;">
+            <blockquote>"Love the book, it makes life easier for you, in a friendly way will help you understand the colorful and stormy confusion of thoughts, feelings, events, it will teach you to respect a person and yourself, it inspires the mind and heart with a feeling of love for the world, for humanity." Maksim Gorky</blockquote>
+        </aside>
+        </div>
+    <footer>
+        <ul>
+            <li><p style="color: #756c6c; font-size: 13px; padding-top: 10%;">2021 &copy; Hedwig Book Club</p></li>
+            <li><a href="http://www.instagram.com/hedwig_book_club?igshid=383rzb1vvv33">
+                 <img class="social" src="images/instagram.png" alt="Picture of Instagram" style="width: 30px; padding-top: 30%;">
+                </a></li>
+            <li><a href="http://api.whatsapp.com/send?phone={{+14255356465}}" target="_blank">
+                 <img class="social" src="images/whatsapp.png" alt="Picture of WhatsApp" style="width: 30px; padding-top: 26%;">
+                </a></li>
+            <li><a href="http://t.me/+1(425)535-6465">
+                 <img class="social" src="images/tg.png" alt="Picture of Telegram" style="width: 35px; padding-top: 20%;">
+                </a></li>
+        </ul>
+    </footer>
+</div>
+    
+</body>
+</html>

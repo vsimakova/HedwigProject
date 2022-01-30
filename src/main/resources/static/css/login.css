@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/back32.jpeg);
+    font-size: 80%;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: auto;
+}
+
+#wrapper {
+    width: 70%;
+    max-width: 1100px;
+    margin: 5% auto;
+    background:linear-gradient( rgba(255,150,138,1), rgba(250,138,138,.60));
+}
+
+header {
+    height: 40%;
+    background:linear-gradient( rgba(255,150,138,1), rgba(250,138,138,.50));
+}
+
+nav {
+    background: #FFD0D0;
+    height: 50px;
+    line-height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    width:100%;
+    max-width: 1100px;
+}
+
+legend {
+    font-size: 2.3em;
+    font-family: Heiti TC, Helvetica, Verdana;
+    padding: 4px;
+    color: #684348;
+    text-shadow: 0 0.1em 0.01em rgba(0, 0, 0, 0.35);
+    font-weight: 600;
+}
+
+form {
+    max-width: 500px;
+    padding: 10px;    
+}
+
+fieldset {
+    padding: 10px;
+}
+
+nav li {
+    float: left;
+    width: 16.66%;
+    text-align: center;
+}
+
+nav a { 
+    text-decoration: none;
+    display: block;
+    font-family: Heiti TC, American Typewriter, Noteworthy, Papyrus, Telugu MN, Helvetica;
+    color: #684348;
+}
+
+nav a:hover {
+    background-color: #DE9C95;
+    color: azure;
+    /*E18C83; DE9C95; D7948D*/
+}
+
+input[type=text], input[type=submit],
+input[type=email], input[type=password], textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #684348;
+  border-radius: 7px;
+  font-family: Heiti TC;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+  color: #684348; 
+  font-family: Heiti TC;
+}
+
+#logo {
+    float: left;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    width: 20%;
+}
+
+#logotext {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    width: 75%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background:  linear-gradient( rgba(222, 156, 149,.90), rgba(255,208,208,1));
+    /*linear-gradient( rgba(250,150,138,.90), rgba(255,208,208,1));*/
+    min-width: 188px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.dropdown-content a {
+    color: #684348;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content ul {
+    left: 100%;
+    top: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+    height: 50px;
+    /*background: rgba(255,150,138,1); (255, 232, 232, 1); #FFD0D0*/
+    background: #FFD0D0;
+    clear: both;
+}
+
+footer ul {
+    list-style-type: none;
+    line-height: 50px;
+    margin-left: 20px;
+    font-size: 0.8em;
+}
+
+footer img {
+    
+    width: 100%;
+    height: auto;
+}
+
+footer a {
+    color: black;
+}
+
+footer li {
+    float: right;
+    margin-right: 3%;
+}
+
+h1, h2, h3, h4 {
+    font-family: times, Helvetica, serif;
+    color: #684348;
+    margin: 10px 0 10px 0; 
+}
+h1 {
+    font-size: 4em;
+    color: lightpink;
+    text-shadow: 0 0.1em 0.01em rgba(0, 0, 0, 0.35);
+    
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-family: Heiti TC, Helvetica;
+    font-size: 20px;
+    color: #684348;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.submitBtn {
+  background-color: #FFD0D0;
+  color: #684348;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #684348;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.submitBtn:hover {
+  background-color: #DE9C95;
+    color: azure;
+}
+
+table td {
+	padding: 5px;
+}
+table tr:nth-child(even) {
+  background-color: #DE9C95;
+}
+table tr:nth-child(odd) {
+  background-color: #FFD0D0;
+}
+table th {
+  color: #684348;
+  background-color: lightpink;
+}

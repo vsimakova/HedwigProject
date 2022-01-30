@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hedwig Book Club</title>
+<link href="css/styles.css" type="text/css" rel="stylesheet"> 
+</head>
+<body>
+<div id="wrapper">
+    <header>
+    	<div style="float:right; padding: 10px 10px 0;" sec:authorize="isAuthenticated()"><span sec:authentication="name" style="color: #684348;font-family: Heiti TC;">Username</span></div>
+    	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 90px;" th:action="@{/logout}" method="post">
+    		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Logout"/>
+    	</form>
+    	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 120px;" th:action="@{/dashboard}" method="post">
+    		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Dashboard"/>
+    	</form>
+    	<!-- <ul style="list-style-type: none;">
+    	<li><h4 style="float:right; padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/register}">Register</a></h4></li>
+    	<li><h4 style="float:right;padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/login}">Login</a></h4></li></ul> -->
+        <a href="index">
+            <img id="logo" src="images/1a.png" alt="Hedwing Book Club Logo" style="float: left;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    width: 20%;"></a>
+        <img id="logotext" src="images/2b.png" alt="Hedwing Book Club Logo Text" style="padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    width: 75%;">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index">HOME</a></li>
+            <li><a href="/aboutus">ABOUT US</a></li>
+            <li class="dropdown"><a href="/book" class="dropbth">BOOK BOX</a>
+               <div class="dropdown-content">
+                    <a href="/womenbox">FOR WOMEN ON ENGLISH</a>
+                    <a href="/womenbox">FOR WOMEN ON RUSSIAN</a>
+                    <a href="/menbox">FOR MEN ON ENGLISH</a>
+                    <a href="/menbox">FOR MEN ON RUSSIAN</a>
+                    <a href="/kidsbox">FOR KIDS ON RUSSIAN</a>
+                </div> 
+            </li>
+            <li><a href="/bookclub">BOOK CLUB</a></li>
+            <li><a href="/gallery">GALLERY</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper2">
+        <main id="aboutus">
+            <a href="cart.html" class="button">FOR WOMEN ON ENGLISH<img class="bookfor" src="images/1a.png" style="width: 150px; padding-left: 30%;" alt="Hedwing Book Club Logo"></a>
+                
+            <a href="cart.html" class="button">FOR WOMEN ON RUSSIAN<img class="bookfor" src="images/1a.png" style="width: 150px; padding-left: 30%;" alt="Hedwing Book Club Logo"></a>
+                
+            <img class="left2" src="images/line4.png" alt="Photo of line">
+                
+            <a href="cart.html" class="button">FOR MEN ON ENGLISH<img class="bookfor" src="images/IMG_8667.PNG" alt="Hedwing Book Club Logo" style="padding-left: 5%; padding-top:20%; padding-bottom:20%;"></a>
+                
+            <a href="cart.html" class="button">FOR MEN ON RUSSIAN<img class="bookfor" src="images/IMG_8667.PNG" alt="Hedwing Book Club Logo" style="padding-left: 5%; padding-top:20%; padding-bottom:20%;"></a>
+                
+            <img class="left2" src="images/line4.png" alt="Photo of line">
+            
+            <a href="cart.html" class="button3">FOR KIDS ON RUSSIAN<img class="bookfor" src="images/IMG_8666.PNG" alt="Hedwing Book Club Logo" style="padding-left: 5%; padding-top:5%; padding-bottom:5%;"></a>
+
+        </main>
+        <aside>
+        </aside>
+        </div>
+    <footer>
+        <ul>
+            <li><p style="color: #756c6c; font-size: 13px; padding-top: 10%;">2021 &copy; Hedwig Book Club</p></li>
+            <li><a href="http://www.instagram.com/hedwig_book_club?igshid=383rzb1vvv33">
+                 <img class="social" src="images/instagram.png" alt="Picture of Instagram" style="width: 30px; padding-top: 30%;">
+                </a></li>
+            <li><a href="http://api.whatsapp.com/send?phone={{+14255356465}}" target="_blank">
+                 <img class="social" src="images/whatsapp.png" alt="Picture of WhatsApp" style="width: 30px; padding-top: 26%;">
+                </a></li>
+            <li><a href="http://t.me/+1(425)535-6465">
+                 <img class="social" src="images/tg.png" alt="Picture of Telegram" style="width: 35px; padding-top: 20%;">
+                </a></li>
+        </ul>
+    </footer>
+</div>
+    
+</body>
+</html>

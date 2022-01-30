@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Login</title>
+<link href="css/login.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<!--<ul style="list-style-type: none;">
+				<li><h4 style="float:right; padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/register}">Register</a></h4></li>
+    			<li><h4 style="float:right;padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/login}">Login</a></h4></li>
+    		</ul>-->
+        	<a href="index">
+            	<img id="logo" src="images/1a.png" alt="Hedwing Book Club Logo" style="float: left; padding-top: 25px; padding-left: 30px; padding-bottom: 20px; width: 20%;">
+    		</a>
+       		<img id="logotext" src="images/2b.png" alt="Hedwing Book Club Logo Text" style="padding-top: 20px; padding-left: 30px; padding-bottom: 50px; width: 75%;">
+    	</header>
+    	<nav>
+        	<ul>
+            	<li><a href="index">HOME</a></li>
+            	<li><a th:href="aboutus">ABOUT US</a></li>
+            		<li class="dropdown"><a th:href="book" class="dropbth">BOOK BOX</a>
+               			<div class="dropdown-content">
+                    		<a th:href="womenbox">FOR WOMEN ON ENGLISH</a>
+                    		<a th:href="womenbox">FOR WOMEN ON RUSSIAN</a>
+                    		<a th:href="menbox">FOR MEN ON ENGLISH</a>
+                    		<a th:href="menbox">FOR MEN ON RUSSIAN</a>
+                    		<a th:href="kidsbox">FOR KIDS ON RUSSIAN</a>
+                		</div> 
+            		</li>
+            	<li><a th:href="bookclub">BOOK CLUB</a></li>
+            	<li><a th:href="gallery">GALLERY</a></li>
+            	<li><a href="contact">CONTACT</a></li>
+        	</ul>
+    	</nav>
+    	<div style="padding: 10% 10%;">
+
+			<h2>Book Information</h2>
+			<h2 th:text="|Book ID: ${book.id}|"></h2>
+			
+			<p><a th:href="shopping_books" style="color: #684348;">Back</a></p>
+			<div th:inline="text">
+			Title: [[${book.title}]]
+			</div>
+			<div>
+			Author: [[${book.author}]]
+			</div>
+			<div>
+			Price: [[${book.price}]]
+			</div>
+			<form method="post" th:action="@{/{id}/toCart(id=${book.id})}">
+				<input type="submit" value="Add to Cart"/>
+			</form>
+			<form method="post" th:action="@{/{id}/delete(id=${book.id})}">
+				<input type="submit" value="Delete Book"/>
+			</form>
+			
+		</div>
+			
+		</div>
+		<footer>
+       		<ul>
+           		<li>
+           			<p style="color: #756c6c; font-size: 13px; padding-top: 10%;">2021 &copy; Hedwig Book Club</p>
+           		</li>
+           		<li>
+          			<a href="http://www.instagram.com/hedwig_book_club?igshid=383rzb1vvv33">
+           				<img class="social" src="images/instagram.png" alt="Picture of Instagram" style="width: 30px; padding-top: 30%;">
+               		</a>
+               	</li>
+           		<li>
+           			<a href="http://api.whatsapp.com/send?phone={{+14255356465}}" target="_blank">
+               			<img class="social" src="images/whatsapp.png" alt="Picture of WhatsApp" style="width: 30px; padding-top: 26%;">
+               		</a>
+               	</li>
+            	<li>
+            		<a href="http://t.me/+1(425)535-6465">
+                 		<img class="social" src="images/tg.png" alt="Picture of Telegram" style="width: 35px; padding-top: 20%;">
+                	</a>
+                </li>
+        	</ul>
+    	</footer>
+	</div>
+</body>
+</html>
