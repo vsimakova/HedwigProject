@@ -34,7 +34,7 @@ public class BookController {
 		return "book_info";
 	}
 	
-	@PostMapping("/{id}/delete")
+	@PostMapping("/{id}" + "b" +"/delete")
 	public String deleteOneBook (@PathVariable Integer id) {
 		bookService.delete(id);
 		return "redirect:/shopping_books";

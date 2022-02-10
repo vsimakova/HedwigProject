@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url(../images/back32.jpeg);
+    background-image: url(http://wallpaperwaifu.com/wp-content/uploads/2021/04/hogwarts-legacy-harry-potter-thumb.jpg);
     font-size: 80%;
     background-size: cover;
     background-attachment: fixed;
@@ -46,7 +46,7 @@ nav ul {
 
 nav li {
     float: left;
-    width: 16.66%;
+    width: 20%;
     text-align: center;
 }
 
@@ -103,34 +103,6 @@ a.button3:hover {
     padding-left: 30%;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background:  linear-gradient( rgba(222, 156, 149,.90), rgba(255,208,208,1));
-    min-width: 188px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 3px;
-}
-
-.dropdown-content a {
-    color: #684348;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content ul {
-    left: 100%;
-    top: 0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 nav a { 
     text-decoration: none;
     display: block;
@@ -152,35 +124,6 @@ main {
 #aboutus {
     width: auto;
 } 
-
-.container3 {
-    width:59.57%;/*580px;*/
-}
-
-.container2 {
-    clear: both;
-}
-        
-.third {
-    width: 30%;
-    
-    float: left;
-    margin: 20px 7px;
-    padding: 0 10px 0 10px;
-    background:linear-gradient( rgba(250,138,138,0), rgba(255,208,208,1));
-}
-        
-.third:nth-child(1), .third:nth-child(2) {
-    margin: 20px 7px;
-    
-}
-    
-
-aside {
-    margin: 35px 10px 20px 0;
-    width: 35%;/*330px;*/ 
-    float: right;
-}
 
 .club {
     font-size: 1.5em;
@@ -251,27 +194,6 @@ h3 {
     font-size: 1.5em;
 }
 
-img.right {
-    float: right;
-    margin: 0 20px 10px 0;
-}
-
-.left {
-    float: left;
-    padding-right: 10px;
-}
-
-img.left2 {
-    float: left;
-    padding-left: 30%;
-    width: 70%;
-    height: auto;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
 
 p {
     font-family: Heiti TC, Helvetica;
@@ -279,11 +201,6 @@ p {
     color: #684348;
     margin-bottom: 20px;
     line-height: 1.5;
-}
-#leftaside {
-    float: left;
-    width: 50%;
-    margin: 20px 0px 0px 27px;
 }
 
 blockquote {
@@ -319,19 +236,6 @@ blockquote {
     padding-bottom: 20px;
     width: 75%;
 }
-
-#pen {
-    float: left;
-    padding-left: 25px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.gallerybook {
-    border: 3px double #684348;
-    padding: 5px;
-}
-
 
 /*css for cart page*/
 

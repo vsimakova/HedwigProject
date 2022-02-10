@@ -1,14 +1,11 @@
 package com.hedwigbookclub.web;
 
-//import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.hedwigbookclub.domain.Book;
 import com.hedwigbookclub.domain.User;
 import com.hedwigbookclub.service.BookService;

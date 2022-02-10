@@ -6,34 +6,29 @@
 </head>
 <body>
 	<div id="wrapper">
-		<header>
-			<!--<ul style="list-style-type: none;">
-				<li><h4 style="float:right; padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/register}">Register</a></h4></li>
-    			<li><h4 style="float:right;padding-right: 10px;"><a style="text-decoration: none;" th:href="@{/login}">Login</a></h4></li>
-    		</ul>-->
-        	<a href="index">
-            	<img id="logo" src="images/1a.png" alt="Hedwing Book Club Logo" style="float: left; padding-top: 25px; padding-left: 30px; padding-bottom: 20px; width: 20%;">
+	<header>
+    	<div style="float:right; padding: 10px 10px 0;" sec:authorize="isAuthenticated()"><span sec:authentication="name" style="color: #684348;font-family: Heiti TC;">Username</span></div>
+    	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 90px;" th:action="@{/logout}" method="post">
+    		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Logout"/>
+    	</form>
+    	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 120px;" th:action="@{/dashboard}" method="post">
+    		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Dashboard"/>
+    	</form>
+        <a href="dashboard">
+            	<img id="logo" src="https://webstockreview.net/images/clipart-owl-harry-potter-15.png" alt="Hedwing Book Club Logo" style="float: left; padding-top: 25px; padding-left: 30px; padding-bottom: 20px; width: 18%;">
     		</a>
-       		<img id="logotext" src="images/2b.png" alt="Hedwing Book Club Logo Text" style="padding-top: 20px; padding-left: 30px; padding-bottom: 50px; width: 75%;">
-    	</header>
-    	<nav>
+       		<h1 style="font-family: Party LET; color: #684348; padding: 10% 0 5% 35%;margin-bottom: 0">Hedwig Book Club</h1>
+    </header>
+    <nav>
         	<ul>
-            	<li><a href="index">HOME</a></li>
-            	<li><a th:href="aboutus">ABOUT US</a></li>
-            		<li class="dropdown"><a th:href="book" class="dropbth">BOOK BOX</a>
-               			<div class="dropdown-content">
-                    		<a th:href="womenbox">FOR WOMEN ON ENGLISH</a>
-                    		<a th:href="womenbox">FOR WOMEN ON RUSSIAN</a>
-                    		<a th:href="menbox">FOR MEN ON ENGLISH</a>
-                    		<a th:href="menbox">FOR MEN ON RUSSIAN</a>
-                    		<a th:href="kidsbox">FOR KIDS ON RUSSIAN</a>
-                		</div> 
-            		</li>
-            	<li><a th:href="bookclub">BOOK CLUB</a></li>
-            	<li><a th:href="gallery">GALLERY</a></li>
-            	<li><a href="contact">CONTACT</a></li>
+            	<li><a href="dashboard">HOME</a></li>
+            	<li><a th:href="users">USERS</a></li>
+            	<li><a th:href="shopping_books">BOOKS</a></li>
+            	<li><a th:href="register_book">ADD BOOK</a></li>
+            	<li><a th:href="cart">CART</a></li>
         	</ul>
     	</nav>
+    	<div id="wrapper2">
     	<div style="padding: 10% 10%;">
 
 			<h2>User Information</h2>
@@ -59,21 +54,6 @@
            		<li>
            			<p style="color: #756c6c; font-size: 13px; padding-top: 10%;">2021 &copy; Hedwig Book Club</p>
            		</li>
-           		<li>
-          			<a href="http://www.instagram.com/hedwig_book_club?igshid=383rzb1vvv33">
-           				<img class="social" src="images/instagram.png" alt="Picture of Instagram" style="width: 30px; padding-top: 30%;">
-               		</a>
-               	</li>
-           		<li>
-           			<a href="http://api.whatsapp.com/send?phone={{+14255356465}}" target="_blank">
-               			<img class="social" src="images/whatsapp.png" alt="Picture of WhatsApp" style="width: 30px; padding-top: 26%;">
-               		</a>
-               	</li>
-            	<li>
-            		<a href="http://t.me/+1(425)535-6465">
-                 		<img class="social" src="images/tg.png" alt="Picture of Telegram" style="width: 35px; padding-top: 20%;">
-                	</a>
-                </li>
         	</ul>
     	</footer>
 	</div>

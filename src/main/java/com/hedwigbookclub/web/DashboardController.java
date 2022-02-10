@@ -87,10 +87,7 @@ public class DashboardController {
 		return "index";
 	}
 	
-	@GetMapping("/thx")
-	public String goToThx () {
-		return "thx";
-	}
+
 	
 	@PostMapping("/dashboard")
 	public String dashboard () {

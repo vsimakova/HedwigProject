@@ -49,8 +49,12 @@ public class ShoppingCartController {
 			return "redirect:/login";
 		}
 		shoppingCartService.addToCart(id, user);
-		String message = "You successfully added book to your cart!";
-		model.put("message", message);
 		return "redirect:/shopping_books";
+	}
+	
+	@PostMapping("/thx")
+	public String goToThx (@AuthenticationPrincipal User user) {
+		shoppingCartService.emptyCart(user);
+		return "thx";
 	}
 }

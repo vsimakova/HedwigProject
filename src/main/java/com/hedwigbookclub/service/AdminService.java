@@ -12,8 +12,6 @@ import com.hedwigbookclub.repository.UserRepository;
 @Service
 public class AdminService {
 	
-	//something what admin can do and user not
-	
 	@Autowired
 	private UserRepository userRepo;
 	
