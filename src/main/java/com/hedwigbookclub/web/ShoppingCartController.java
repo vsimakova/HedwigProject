@@ -1,5 +1,6 @@
 package com.hedwigbookclub.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hedwigbookclub.domain.Book;
 import com.hedwigbookclub.domain.CartItem;
+import com.hedwigbookclub.domain.Order;
 import com.hedwigbookclub.domain.User;
 import com.hedwigbookclub.service.BookService;
+import com.hedwigbookclub.service.OrderService;
 import com.hedwigbookclub.service.ShoppingCartService;
 
 @Controller
@@ -26,21 +29,32 @@ public class ShoppingCartController {
 	@Autowired
 	private BookService bookService;
 	
+	@Autowired
+	private OrderService orderService;
+	
 	@GetMapping("/cart")
 	public String showShoppingCart(Model model, @AuthenticationPrincipal User user) {
 		List<CartItem> cartItems = shoppingCartService.listCartItems(user);
 		float total = 0;
+		List<Book> books = new ArrayList<>();
 		for(int i = 0; i <cartItems.size(); i++) {
 			total+=cartItems.get(i).getBook().getPrice();
+			books.add(cartItems.get(i).getBook());
 		}
-		
-		List<Book> books = bookService.findAll();
+		Order order = new Order();
 		model.addAttribute("books", books);
-		
+		model.addAttribute("order", order);
 		model.addAttribute("cartItems", cartItems);
 		model.addAttribute("total", total);
 		model.addAttribute("pageTitle", "Shopping Cart");
 		return "cart";
+	}
+	
+	@PostMapping("/placing_order")
+	public String placeOrder(@AuthenticationPrincipal User user, Order order) {
+		shoppingCartService.emptyCart(user);
+		orderService.save(order);
+		return "thx";
 	}
 	
 	@PostMapping("/{id}/toCart")
@@ -51,10 +65,5 @@ public class ShoppingCartController {
 		shoppingCartService.addToCart(id, user);
 		return "redirect:/shopping_books";
 	}
-	
-	@PostMapping("/thx")
-	public String goToThx (@AuthenticationPrincipal User user) {
-		shoppingCartService.emptyCart(user);
-		return "thx";
-	}
+
 }

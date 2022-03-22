@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hedwigbookclub.domain.User;
 import com.hedwigbookclub.service.AdminService;
+import com.hedwigbookclub.service.AuthorityService;
+import com.hedwigbookclub.service.ShoppingCartService;
 import com.hedwigbookclub.service.UserService;
 
 @Controller
@@ -24,6 +26,12 @@ public class DashboardController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private ShoppingCartService shoppingCartService;
+	
+	@Autowired
+	private AuthorityService authService;
+	
 	@GetMapping("/dashboard")
 	public String getDashboard (@AuthenticationPrincipal User user, ModelMap model) {
 		
@@ -34,11 +42,12 @@ public class DashboardController {
 	@GetMapping("/users")
 	public String listUsers (@AuthenticationPrincipal User user, ModelMap model) {
 		
-		if(user.getAuthorities().equals("ROLE_USER")) {
-			List<User> users = adminService.getAllUserAccounts();
-			model.put("users", users);
-		}
-		List<User> users = userService.findAll();
+//		if(user.getAuthorities().equals("ROLE_USER")) {
+//			List<User> users = adminService.getAllUserAccounts();
+//			model.put("users", users);
+//		}
+//		List<User> users = userService.findAll();
+		List<User> users = adminService.getAllUserAccounts();
 		model.put("users", users);
 		return "users";
 	}
@@ -52,7 +61,9 @@ public class DashboardController {
 	}
 	
 	@PostMapping("/users/{id}/delete")
-	public String deleteOneUser (@PathVariable Integer id) {
+	public String deleteOneUser (@PathVariable Integer id, @AuthenticationPrincipal User user) {
+		shoppingCartService.emptyCart(user);
+		authService.deleteAuthorities(user);
 		userService.delete(id);
 		return "redirect:/users";
 	}
@@ -87,10 +98,13 @@ public class DashboardController {
 		return "index";
 	}
 	
-
-	
 	@PostMapping("/dashboard")
 	public String dashboard () {
 		return "redirect:/dashboard";
+	}
+	
+	@GetMapping("/403")
+	public String goTo403 () {
+		return "403";
 	}
 }

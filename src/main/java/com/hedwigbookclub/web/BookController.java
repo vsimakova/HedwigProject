@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hedwigbookclub.domain.Book;
 import com.hedwigbookclub.service.BookService;
+import com.hedwigbookclub.service.ShoppingCartService;
 
 @Controller
 public class BookController {
 
 	@Autowired
 	private BookService bookService;
+	
+	@Autowired
+	private ShoppingCartService shoppingCartService;
 	
 	@GetMapping("/shopping_books")
 	public String getBooks (ModelMap model) {
@@ -36,6 +40,7 @@ public class BookController {
 	
 	@PostMapping("/{id}" + "b" +"/delete")
 	public String deleteOneBook (@PathVariable Integer id) {
+		shoppingCartService.deleteBook(id);
 		bookService.delete(id);
 		return "redirect:/shopping_books";
 	}

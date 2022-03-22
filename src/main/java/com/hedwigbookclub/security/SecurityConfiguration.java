@@ -34,13 +34,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/admin/**").hasAnyRole("ADMIN")
+				.antMatchers("/admin/**").hasAnyRole("ROLE_ADMIN")
+				.antMatchers("/cart").hasAuthority("ROLE_USER")
+				.antMatchers("/dashboard", "/shopping_books", "/book_info").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
+				.antMatchers("/register_book", "/users", "/user").hasAuthority("ROLE_ADMIN")
 				.antMatchers("/css/*.css", "/js/*.js", "/images/**", "/favicon_hedwig/**", "/php/*.php").permitAll()
 				.antMatchers("/register","/registration", "/success").permitAll()
 				.anyRequest().hasAnyRole("USER").and()
 			.formLogin()
 				.loginPage("/login")
 				.defaultSuccessUrl("/dashboard")
-				.permitAll();
+				.permitAll()
+				.and()
+				.exceptionHandling().accessDeniedPage("/403");
 	}
 }

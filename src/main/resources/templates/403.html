@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
-<title>Dashboard</title>
-<link href="css/login.css" type="text/css" rel="stylesheet"> 
+<meta charset="UTF-8">
+<title>Access Denied</title>
+<link href="css/styles.css" type="text/css" rel="stylesheet"> 
 </head>
 <body>
-	<div id="wrapper">
-		<header>
+<div id="wrapper">
+<header>
     	<div style="float:right; padding: 10px 10px 0;" sec:authorize="isAuthenticated()"><span sec:authentication="name" style="color: #684348;font-family: Heiti TC;">Username</span></div>
     	<form style="float:right; padding: 10px 10px 0px; margin-bottom: 0px; width: 90px;" th:action="@{/logout}" method="post">
     		<input type="submit" style="margin-bottom: 0px; background-color: #FFD0D0; color: #684348;" value="Logout"/>
@@ -19,7 +20,7 @@
     		</a>
        		<h1 style="font-family: Party LET; color: #684348; padding: 10% 0 5% 35%;margin-bottom: 0">Hedwig Book Club</h1>
     </header>
-    	<nav>
+        <nav>
         	<ul>
             	<li><a href="dashboard">HOME</a></li>
             	<li><a th:href="users">USERS</a></li>
@@ -28,39 +29,21 @@
             	<li><a th:href="cart">CART</a></li>
         	</ul>
     	</nav>
-    	<div id="wrapper2">
-    	
-    	
-    	<div style="padding: 10% 30%;">
-    		<div>
-	    		<h1>Dashboard</h1>
-	    		<p th:text="|Hello there ${user.username}|"></p>
-				<form method="post" action="/logout">
-					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-					<!--<th sec:authorize="hasAnyAuthority('ADMIN', 'ROLE_USER')"></th>-->
-					<p><a sec:authorize="hasAuthority('ADMIN')" th:href="users" style="color: #684348;">List of users</a></p>
-					<br/>
-					<p><a sec:authorize="hasAuthority('ADMIN')" th:href="register_book" style="color: #684348;">Add Books</a></p>
-					<br/>
-					<p><a sec:authorize="hasAuthority('ADMIN')" th:href="shopping_books" style="color: #684348;">List of Available Books</a></p>
-					<br/>
-					<p><a sec:authorize="hasAuthority('ROLE_USER')" th:href="shopping_books" style="color: #684348;">List of Available Books</a></p>
-					<br/>
-					<p><a sec:authorize="hasAuthority('ROLE_USER')" th:href="cart" style="color: #684348;">Cart</a></p>
-					<button class="submitBtn" type="submit">Logout</button>
-				</form> 
-			</div>
-    	</div>
-    	
-    	
-    	</div>
-		<footer>
+    <div id="wrapper2">
+        <main id="aboutus">
+            <h1>Sorry, you do not have permission to access this page!</h1>
+
+        </main>
+        
+        </div>
+    <footer>
        		<ul>
            		<li>
            			<p style="color: #756c6c; font-size: 13px; padding-top: 10%;">2021 &copy; Hedwig Book Club</p>
            		</li>
         	</ul>
     	</footer>
-	</div>
+</div>
+    
 </body>
 </html>

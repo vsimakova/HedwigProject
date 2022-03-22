@@ -31,6 +31,13 @@ public class ShoppingCartService {
 		cartItem.setBook(book);
 		cartRepo.save(cartItem);
 	}
+	
+	public void deleteBook(Integer id) {
+		Book book = bookRepo.getById(id);
+		CartItem cartItem = new CartItem();
+		cartItem.setBook(book);
+		cartRepo.deleteById(id);
+	}
 
 	public void emptyCart(User user) {
 		List<CartItem>list = listCartItems(user);

@@ -11,15 +11,15 @@ import org.springframework.security.core.GrantedAuthority;
 @Entity
 public class Authorities implements GrantedAuthority {
 	private static final long serialVersionUID = -4007179149687479203L;
-	private Long id;
+	private Integer id;
 	private String authority;
 	private User user;
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	@Override
@@ -35,7 +35,6 @@ public class Authorities implements GrantedAuthority {
 	}
 	public void setUser(User user) {
 		this.user = user;
-	}
-	
+	}	
 }
 

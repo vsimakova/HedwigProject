@@ -1,5 +1,8 @@
 package com.hedwigbookclub.security;
 
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.hedwigbookclub.domain.User;
@@ -35,5 +38,16 @@ public class CustomSecurityUser extends User implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
+	
+//	@Override
+//	public Collection<? extends GrantedAuthority> getAuthorities() {
+//		Set<Authorities> auth = user.getAuthoritiess();
+//		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+//		
+//		for (Authorities authority : auth) {
+//			authorities.add(new SimpleGrantedAuthority(authority.getAuthority()));
+//		}
+//		return authorities;
+//	}
 
 }

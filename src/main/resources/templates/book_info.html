@@ -44,10 +44,10 @@
 			<div>
 			Price: [[${book.price}]]
 			</div>
-			<form method="post" th:action="@{/{id}/toCart(id=${book.id})}">
+			<form sec:authorize="hasAuthority('ROLE_USER')" method="post" th:action="@{/{id}/toCart(id=${book.id})}">
 				<input type="submit" value="Add to Cart"/>
 			</form>
-			<form method="post" th:action="@{/{id}b/delete(id=${book.id})}">
+			<form sec:authorize="hasAuthority('ADMIN')" method="post" th:action="@{/{id}/delete(id=${book.id})}">
 				<input type="submit" value="Delete Book"/>
 			</form>
 			

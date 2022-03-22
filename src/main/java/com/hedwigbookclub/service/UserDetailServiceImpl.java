@@ -1,6 +1,8 @@
 package com.hedwigbookclub.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,6 +17,16 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UserRepository userRepo;
+	
+//	@Bean
+//	public UserDetailsService userDetailsService() {
+//		return new UserDetailServiceImpl();
+//	}
+	
+//	@Bean
+//	public DaoAuthenticationProvider authenticationProvider() {
+//		DaoAuth
+//	}
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
