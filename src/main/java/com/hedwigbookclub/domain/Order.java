@@ -15,20 +15,17 @@ import javax.persistence.Table;
 public class Order {
 
 	private int order_id;
-	private String fullName;
+	private String fullname;
 	private String email;
 	private String address;
 	private String city;
 	private String state;
 	private int zip;
-	private String NameOnCard;
-	private String creditCardNumber;
-	private int expMonth;
-	private int expYear;
+	private String nameoncard;
+	private String creditcardnumber;
+	private int month;
+	private int year;
 	private int cvv;
-//	private Book book;
-//	private User customer;
-//	private List<Book> books;
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getOrder_id() {
@@ -36,12 +33,6 @@ public class Order {
 	}
 	public void setOrder_id(int order_id) {
 		this.order_id = order_id;
-	}
-	public String getFullName() {
-		return fullName;
-	}
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
 	}
 	public String getEmail() {
 		return email;
@@ -73,62 +64,42 @@ public class Order {
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
-	public String getNameOnCard() {
-		return NameOnCard;
-	}
-	public void setNameOnCard(String nameOnCard) {
-		NameOnCard = nameOnCard;
-	}
-	public String getCreditCardNumber() {
-		return creditCardNumber;
-	}
-	public void setCreditCardNumber(String creditCardNumber) {
-		this.creditCardNumber = creditCardNumber;
-	}
-	public int getExpMonth() {
-		return expMonth;
-	}
-	public void setExpMonth(int expMonth) {
-		this.expMonth = expMonth;
-	}
-	public int getExpYear() {
-		return expYear;
-	}
-	public void setExpYear(int expYear) {
-		this.expYear = expYear;
-	}
 	public int getCvv() {
 		return cvv;
 	}
 	public void setCvv(int cvv) {
 		this.cvv = cvv;
 	}
-	
-//	@ManyToOne
-//	@JoinColumn(name = "product_id")
-//	public Book getBook() {
-//		return book;
-//	}
-//
-//	public void setBook(Book book) {
-//		this.book = book;
-//	}
-	
-//	@ManyToOne
-//	@JoinColumn(name = "customer_id")
-//	public User getCustomer() {
-//		return customer;
-//	}
-//
-//	public void setCustomer(User customer) {
-//		this.customer = customer;
-//	}
-//	public List<Book> getBooks() {
-//		return books;
-//	}
-//	public void setBooks(List<Book> books) {
-//		this.books = books;
-//	}
+	public String getFullname() {
+		return fullname;
+	}
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+	public String getNameoncard() {
+		return nameoncard;
+	}
+	public void setNameoncard(String nameoncard) {
+		this.nameoncard = nameoncard;
+	}
+	public String getCreditcardnumber() {
+		return creditcardnumber;
+	}
+	public void setCreditcardnumber(String creditcardnumber) {
+		this.creditcardnumber = creditcardnumber;
+	}
+	public int getMonth() {
+		return month;
+	}
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}	
 	
 	
 }
