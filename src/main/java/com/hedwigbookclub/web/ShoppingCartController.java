@@ -16,7 +16,6 @@ import com.hedwigbookclub.domain.Book;
 import com.hedwigbookclub.domain.CartItem;
 import com.hedwigbookclub.domain.Order;
 import com.hedwigbookclub.domain.User;
-import com.hedwigbookclub.service.BookService;
 import com.hedwigbookclub.service.OrderService;
 import com.hedwigbookclub.service.ShoppingCartService;
 
@@ -25,9 +24,6 @@ public class ShoppingCartController {
 
 	@Autowired
 	private ShoppingCartService shoppingCartService;
-	
-	@Autowired
-	private BookService bookService;
 	
 	@Autowired
 	private OrderService orderService;
