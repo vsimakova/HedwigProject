@@ -37,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/admin/**").hasAnyRole("ROLE_ADMIN")
 				.antMatchers("/cart").hasAuthority("ROLE_USER")
 				.antMatchers("/dashboard", "/shopping_books", "/book_info").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
-				.antMatchers("/register_book", "/users", "/user").hasAuthority("ROLE_ADMIN")
+				.antMatchers("/register_book","/registration_book", "/success_register_book", "/users", "/user").hasAuthority("ROLE_ADMIN")
 				.antMatchers("/css/*.css", "/js/*.js", "/images/**", "/favicon_hedwig/**", "/php/*.php").permitAll()
 				.antMatchers("/register","/registration", "/success").permitAll()
 				.anyRequest().hasAnyRole("USER").and()
