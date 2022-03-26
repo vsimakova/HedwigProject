@@ -20,7 +20,7 @@ public class Order {
 	private String address;
 	private String city;
 	private String state;
-	private int zip;
+	private String zip;
 	private String nameoncard;
 	private String creditcardnumber;
 	private int month;
@@ -58,10 +58,10 @@ public class Order {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 	public int getCvv() {
